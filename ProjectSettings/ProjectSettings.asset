@@ -256,7 +256,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 2800000, guid: 3865ec1b4b626be4681b0ffb00f8f44d, type: 3}
+  androidSplashScreen: {fileID: 2800000, guid: 11cebcdcd6b8a6748b47adc11c3b319b, type: 3}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0

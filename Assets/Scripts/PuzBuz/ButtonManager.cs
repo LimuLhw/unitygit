@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     float speed = 1.0f;
     RectTransform titleLogo;
     Transform selectUI, stageUI, optionUI, arrowBtn1, arrowBtn2, modeUI, warnUI, blackPanel, dataResetUI;
-    Image soundBtn, effectBtn;
+    Image soundBtn, vibrationBtn, effectBtn;
     CanvasGroup selectCG, stageCG, optionCG, arrowCG;
     Image blackPanelImg;
     Text GeneralStageText, HardcoreStageText, DataResetText, HighScoreText;
@@ -50,6 +50,7 @@ public class ButtonManager : MonoBehaviour
         DataResetText = dataResetUI.GetComponent<Text>();
 
         soundBtn = optionUI.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>();
+        vibrationBtn = optionUI.GetChild(0).transform.GetChild(1).transform.GetChild(1).GetComponent<Image>();
         effectBtn = optionUI.GetChild(0).transform.GetChild(2).transform.GetChild(1).GetComponent<Image>();
 
         blackPanelImg = blackPanel.GetComponent<Image>();
@@ -83,9 +84,10 @@ public class ButtonManager : MonoBehaviour
 
         GeneralStageText.text = "현재 스테이지 : " + JsonData.StageRecord.ToString();
         HardcoreStageText.text = "현재 스테이지 : " + JsonData.StageHardRecord.ToString();
-        HighScoreText.text = string.Format("{0:#,###}", JsonData.HighScore);
+        HighScoreText.text = string.Format("{0:#,###0}", JsonData.HighScore);
 
         SoundFunc();
+        VibrationFunc();
         EffectFunc();
 
         if (startFadeIn)
@@ -162,7 +164,7 @@ public class ButtonManager : MonoBehaviour
             {
                 moveTime = 0.5f;
                 MapSetting.isResume = true;
-                JsonData.Stage = JsonData.StageHardRecord;
+                JsonData.HardStage = JsonData.StageHardRecord;
                 SceneManager.LoadScene("PuzBuzHardMode");
             }
         }
@@ -239,6 +241,18 @@ public class ButtonManager : MonoBehaviour
         else
         {
             soundBtn.sprite = btnSprites[0];
+        }
+    }
+
+    private void VibrationFunc()
+    {
+        if (JsonData.isVibration)
+        {
+            vibrationBtn.sprite = btnSprites[1];
+        }
+        else
+        {
+            vibrationBtn.sprite = btnSprites[0];
         }
     }
 
@@ -335,6 +349,11 @@ public class ButtonManager : MonoBehaviour
     public void SoundOnOff()
     {
         JsonData.isSound = !JsonData.isSound;
+    }
+
+    public void VibrationOff()
+    {
+        JsonData.isVibration = !JsonData.isVibration;
     }
 
     public void EffectOnOff()

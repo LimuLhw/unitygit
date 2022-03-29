@@ -66,6 +66,9 @@ public class GoalScript : MonoBehaviour
         {
             if (keyCount >= 1) return;
             UIMgr.isClear = true;
+            if (JsonData.isVibration)
+                Vibration.Vibrate((long)1000);
+
             if (SceneManager.GetActiveScene().name == "PuzBuzGame")
             {
                 if (JsonData.Stage + 1 > JsonData.StageRecord)

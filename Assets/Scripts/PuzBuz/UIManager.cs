@@ -118,6 +118,9 @@ public class UIManager : MonoBehaviour
     {
         if (MovingScript.DelayTime >= 0.2f)
         {
+            if (JsonData.isVibration)
+                Vibration.Vibrate((long)100);
+
             if (GetPoison)
                 isRightKey = true;
             else
@@ -129,6 +132,9 @@ public class UIManager : MonoBehaviour
     {
         if (MovingScript.DelayTime >= 0.2f)
         {
+            if (JsonData.isVibration)
+                Vibration.Vibrate((long)100);
+
             if (GetPoison)
                 isLeftKey = true;
             else
@@ -140,6 +146,9 @@ public class UIManager : MonoBehaviour
     {
         if (MovingScript.DelayTime >= 0.2f)
         {
+            if (JsonData.isVibration)
+                Vibration.Vibrate((long)100);
+
             if (GetPoison)
                 isDownKey = true;
             else
@@ -151,6 +160,9 @@ public class UIManager : MonoBehaviour
     {
         if (MovingScript.DelayTime >= 0.2f)
         {
+            if (JsonData.isVibration)
+                Vibration.Vibrate((long)100);
+
             if (GetPoison)
                 isUpKey = true;
             else
@@ -160,6 +172,9 @@ public class UIManager : MonoBehaviour
 
     public void SButton()
     {
+        if (JsonData.isVibration)
+            Vibration.Vibrate((long)100);
+
         if (MovingScript.DelayTime >= 0.2f)
             isSpaceKey = true;
     }

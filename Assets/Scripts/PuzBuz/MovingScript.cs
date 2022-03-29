@@ -297,14 +297,16 @@ public class MovingScript : MonoBehaviour
         {
             TopBtn.blocksRaycasts = false;
             PlayerAni.SetTrigger("Die");
-            Vibration.Vibrate((long)1000);
+            if(JsonData.isVibration)
+                Vibration.Vibrate((long)1000);
             Transform deathPanel = GameObject.Find("Canvas").transform.Find("DeathPanel");
             isDeathSceneOpen = false;
 
             //https://drehzr.tistory.com/751 여기를 참고함. UnityManifest.xml에서 권한을 넣어야함.
             //진동기능은 반드시 모바일 기기에서 테스트 해야함.
             if (Application.platform == RuntimePlatform.Android)
-                Vibration.Vibrate((long)1000); //1초동안 진동
+                if (JsonData.isVibration)
+                    Vibration.Vibrate((long)1000); //1초동안 진동
 
             yield return new WaitForSeconds(1.5f);
 

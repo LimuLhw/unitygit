@@ -97,11 +97,18 @@ public class GameManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "PuzBuzHardMode")
             {
+                HighScore();
                 JsonData.HardStage = 1;
                 JsonData.StageHardRecord = 1;
                 JsonData.Life = 1;
                 JsonData.Score = 0;
             }
         }
+    }
+
+    void HighScore()
+    {
+        if (JsonData.Score > JsonData.HighScore)
+            JsonData.HighScore = JsonData.Score;
     }
 }
