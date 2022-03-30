@@ -26,7 +26,7 @@ public class MovingScript : MonoBehaviour
     public static bool isPlayerDie = false;
     private bool isDeathSceneOpen = false;
     private float MoveCoolTime = 0.0f;
-    public static float DelayTime = 0.0f;
+    public static float DelayTime = 0.0f, MaxDelayTime = 0.03f;
     public Sprite[] playerTexture;
     private SpriteRenderer SRenderer;
     private Animator PlayerAni;
@@ -119,8 +119,9 @@ public class MovingScript : MonoBehaviour
             EnemyMoveSetActive();
             if (isPlayerDie) return;
 
-            if (DelayTime >= 0.2f)
+            if (DelayTime >= MaxDelayTime)
                 MoveCoolTime = Time.time;
+
             UIMgr.isSpaceKey = false;
         }
 
@@ -154,7 +155,7 @@ public class MovingScript : MonoBehaviour
                 if (isDie()) return;
             }
 
-            if (DelayTime >= 0.2f)
+            if (DelayTime >= MaxDelayTime)
                 MoveCoolTime = Time.time;
             UIMgr.isRightKey = false;
         }
@@ -188,7 +189,7 @@ public class MovingScript : MonoBehaviour
                 if (isDie()) return;
             }
 
-            if (DelayTime >= 0.2f)
+            if (DelayTime >= MaxDelayTime)
                 MoveCoolTime = Time.time;
             UIMgr.isLeftKey = false;
         }
@@ -223,7 +224,7 @@ public class MovingScript : MonoBehaviour
                 if (isDie()) return;
             }
 
-            if (DelayTime >= 0.2f)
+            if (DelayTime >= MaxDelayTime)
                 MoveCoolTime = Time.time;
             UIMgr.isDownKey = false;
         }
@@ -258,7 +259,7 @@ public class MovingScript : MonoBehaviour
                 if (isDie()) return;
             }
 
-            if (DelayTime >= 0.2f)
+            if (DelayTime >= MaxDelayTime)
                 MoveCoolTime = Time.time;
             UIMgr.isUpKey = false;
         }

@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     }
     private static GameManager _instance;
 
-    //Sounds           이동    교체      사망     아이템   실패     클리어
-    public AudioClip move, change, death, getItem, failSnd, clearSnd;
+    //Sounds           이동    교체      사망     아이템   실패     클리어,    완주
+    public AudioClip move, change, death, getItem, failSnd, clearSnd, goal;
 
     void Awake()
     {

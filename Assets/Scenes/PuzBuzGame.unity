@@ -289,6 +289,7 @@ MonoBehaviour:
   getItem: {fileID: 8300000, guid: 865aa715a2a3fed42b6e5d21bc80de0b, type: 3}
   failSnd: {fileID: 8300000, guid: b918a86f5f9f1ac43b3495e5b5c96f89, type: 3}
   clearSnd: {fileID: 8300000, guid: f901465dc62865047bb6314b670bc40b, type: 3}
+  goal: {fileID: 8300000, guid: 7260768375f7f164cb277720fce9f0de, type: 3}
 --- !u!82 &119080870
 AudioSource:
   m_ObjectHideFlags: 0

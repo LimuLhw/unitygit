@@ -67,7 +67,7 @@ public class GoalScript : MonoBehaviour
             if (keyCount >= 1) return;
             UIMgr.isClear = true;
             if (JsonData.isVibration)
-                Vibration.Vibrate((long)1000);
+                Vibration.Vibrate((long)500);
 
             if (SceneManager.GetActiveScene().name == "PuzBuzGame")
             {
@@ -116,7 +116,9 @@ public class GoalScript : MonoBehaviour
 
     IEnumerator ShowClearPanel()
     {
-        yield return new WaitForSeconds(1.0f);
+        if (JsonData.isSound)
+            snd.PlayOneShot(gm.goal, 1.0f);
+        yield return new WaitForSeconds(0.24f);
         if (JsonData.isSound)
             snd.PlayOneShot(gm.clearSnd, 1.0f);
         ClearUI.gameObject.SetActive(true);

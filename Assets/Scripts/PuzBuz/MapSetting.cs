@@ -30,9 +30,6 @@ public class MapSetting : MonoBehaviour
     public int PosY;
     private GameObject MapPosition;
 
-    int xMax = 16;
-    int yMax = 10;
-
     public static bool isResume = false;
     GameData JsonData;
 

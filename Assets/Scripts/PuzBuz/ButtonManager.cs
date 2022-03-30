@@ -8,7 +8,7 @@ public class ButtonManager : MonoBehaviour
 {
     float moveTime = 0.0f;
     float outputTime = 0.0f;
-    float speed = 1.0f;
+    //float speed = 1.0f;
     RectTransform titleLogo;
     Transform selectUI, stageUI, optionUI, arrowBtn1, arrowBtn2, modeUI, warnUI, blackPanel, dataResetUI;
     Image soundBtn, vibrationBtn, effectBtn;
