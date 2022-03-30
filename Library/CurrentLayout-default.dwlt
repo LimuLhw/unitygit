@@ -342,7 +342,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 392}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 161
+  controlID: 236
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 392}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 217
+  controlID: 211
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: c8400000
       m_LastClickedID: 0
-      m_ExpandedIDs: 2cbbffff3ebbfffff2bbfffffebbffff06bcffff0abcffff6cbcffff60fbffff
+      m_ExpandedIDs: 60fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -834,7 +834,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/PuzBuz
+    - Assets
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -871,7 +871,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 1020}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff00000000c8400000ca400000cc400000ce400000d0400000d2400000d4400000d6400000d8400000da400000dc400000de400000e0400000e2400000e4400000e6400000e8400000
