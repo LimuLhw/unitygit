@@ -7,12 +7,20 @@ using UnityEngine.SceneManagement;
 public class StageContents : MonoBehaviour
 {
     int ContentCount;
+    int StageNum;
+    float moveTime = 0.0f;
+    bool isStart = false;
     Transform ContentChild;
+    Transform blackPanel;
+    Image blackPanelImg;
     Sprite[] StageButton;
     GameData JsonData;
 
     void Awake()
     {
+        blackPanel = GameObject.Find("MainTitleCanvas").transform.GetChild(8).GetComponent<Transform>();
+        blackPanelImg = blackPanel.GetComponent<Image>();
+
         ContentCount = transform.childCount;
         StageButton = Resources.LoadAll<Sprite>("StageBtn");
         JsonData = DataController.Instance.gameData;
@@ -33,15 +41,29 @@ public class StageContents : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (isStart)
+        {
+            blackPanel.gameObject.SetActive(true);
+            moveTime += Time.deltaTime;
+            blackPanelImg.color = new Color(0, 0, 0, moveTime * 2);
+
+            if (moveTime >= 0.5f)
+            {
+                MapSetting.isResume = false;
+                JsonData.Stage = StageNum;
+                SceneManager.LoadScene("PuzBuzGame");
+            }
+        }
+    }
+
     public void GoToStage(int StageNumber)
     {
-        JsonData = DataController.Instance.gameData;
-
         if (StageNumber <= JsonData.StageRecord || StageNumber == 1)
         {
-            MapSetting.isResume = false;
-            JsonData.Stage = StageNumber;
-            SceneManager.LoadScene("PuzBuzGame");
+            isStart = true;
+            StageNum = StageNumber;
         }
     }
 }
